@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const fetchPost = async () => {
-       const response = await fetch('http://localhost:9000/quotes/services/allCarQuotes');
+       const response = await fetch('http://ballerinabackend-180531532:9000/quotes/services/allCarQuotes');
        const data = await response.json();
        console.log(data);
        setPosts(data);
