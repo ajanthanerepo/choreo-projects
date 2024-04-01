@@ -8,7 +8,13 @@ function App() {
 
   useEffect(() => {
     const fetchPost = async () => {
-       const response = await fetch('https://b8427943-6ba9-4aaf-b410-9ee8377dcb41-dev.e1-eu-north-azure.choreoapis.dev/rentcarquoteservice/ballerinabackend/quotes-services-73f/v1/allCarQuotes');
+       const response = await fetch('https://b8427943-6ba9-4aaf-b410-9ee8377dcb41-dev.e1-eu-north-azure.choreoapis.dev/rentcarquoteservice/ballerinabackend/quotes-services-73f/v1/allCarQuotes', {
+        method: 'GET',
+        headers: new Headers({
+          'Access-Control-Allow-Origin': '*'
+        })
+
+       });
        const data = await response.json();
        console.log(data);
        setPosts(data);
